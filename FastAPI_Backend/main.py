@@ -3,9 +3,10 @@ from pydantic import BaseModel,conlist
 from typing import List,Optional
 import pandas as pd
 from model import recommend,output_recommended_recipes
+from joblib import load
 
 
-dataset=pd.read_csv('../Data/dataset.csv',compression='gzip')
+dataset=load('dataset.joblib')
 
 app = FastAPI()
 
